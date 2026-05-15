@@ -1,0 +1,3 @@
+## 2024-11-20 - [Optimizing External Link Latency]
+**Learning:** For static pages that primarily serve as a directory of external links, `preconnect` and `dns-prefetch` are the most effective performance optimizations. These must precisely match the domain origins used (e.g., `youtube.com` vs `www.youtube.com`) to be effective. Additionally, when working with this repository, `exercise.html` may have CRLF line endings which can cause `replace_with_git_merge_diff` to fail; converting to LF is a necessary preparation step.
+**Action:** Always verify domain origins used in the document before adding resource hints and ensure the target file has LF line endings before applying patches.
