@@ -1,0 +1,3 @@
+## 2026-05-28 - Resource Hint Origins and CRLF Handling
+**Learning:** Resource hints (`preconnect`, `dns-prefetch`) must exactly match the origins used in the document's links (e.g., `https://youtube.com` vs `https://www.youtube.com`) to be effective. Additionally, `exercise.html` uses CRLF line endings, which can cause `replace_with_git_merge_diff` to fail if not handled. Redundant `dns-prefetch` is unnecessary when `preconnect` is used for the same origin in modern browsers.
+**Action:** Always verify exact origins using `grep` before adding resource hints. Convert CRLF to LF before using diff tools and restore them afterward.
