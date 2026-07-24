@@ -1,0 +1,3 @@
+## 2026-07-24 - Handle CRLF line endings for precise git merge diff tool application
+**Learning:** Working with static HTML assets on Windows-initialized repositories can introduce CRLF line terminators. Standard tool behaviors (like `replace_with_git_merge_diff` or line-based string patching) can fail or introduce massive diff noise when encountering Windows-style line endings (\r\n) on Linux-based runtimes. Converting line endings to LF before doing modifications and restoring them to CRLF afterwards is critical.
+**Action:** Always check file line terminators using `file` or Python, and implement a 3-step sequence: (1) Convert to LF, (2) Apply diff changes, (3) Restore CRLF back to the target file.
