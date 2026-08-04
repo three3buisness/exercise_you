@@ -1,0 +1,3 @@
+## 2026-08-04 - Handling CRLF Files in Git Merge Diff and Parser-Restart Performance Optimization
+**Learning:** Working with CRLF files can cause `replace_with_git_merge_diff` to fail or result in incorrect line endings/noise in diffs. Additionally, omitting `<meta charset="UTF-8">` as one of the first elements in `<head>` forces browsers to run fallback encoding detection heuristics, which can trigger a re-parse of the HTML document after receiving the first 1024 bytes.
+**Action:** Convert CRLF to LF using python before making changes, run the diff patches, and restore LF to CRLF afterwards. Always place `<meta charset="UTF-8">` at the very top of `<head>` to prevent parser restarts.
