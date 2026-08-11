@@ -1,0 +1,3 @@
+## 2026-08-11 - CRLF conversion and browser preconnect resource hints
+**Learning:** Working with CRLF files can cause automated tools like `replace_with_git_merge_diff` to fail or produce excessive line-ending diff noise in repositories. Converting the file line-endings to LF first, making edits, and restoring back to CRLF maintains cleanly readable git patches and avoids compatibility issues. For link-heavy static files pointing to YouTube and youtu.be, adding preconnect resource hints to `<head>` delivers a measurable performance speedup for users without adding JS execution overhead.
+**Action:** Convert CRLF to LF, apply modifications, restore CRLF, and use pure-ASCII comments to document optimizations to prevent character set encoding issues.
