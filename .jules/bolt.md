@@ -1,0 +1,3 @@
+## 2026-08-22 - CRLF Line Endings & HTML Encoding Sniffing Optimization
+**Learning:** `exercise.html` uses CRLF line endings and long lines (up to 886 characters). Modifying HTML without explicit `<meta charset="UTF-8">` causes modern browsers to buffer chunked HTML bytes to perform encoding detection/sniffing, leading to execution delays (~10-50ms). Converting CRLF to LF prior to git merge diff edits avoids tool search errors, and restoring CRLF afterwards prevents diff noise.
+**Action:** Always convert CRLF to LF before targeted file replacements, declare `<meta charset="UTF-8">` early in `<head>`, and restore original CRLF line endings.
