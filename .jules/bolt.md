@@ -1,0 +1,3 @@
+## 2026-08-24 - CRLF Line Endings & Charset Declaration in Static HTML
+**Learning:** `exercise.html` uses CRLF line endings and very long lines (886+ chars). Performing diff replacements on CRLF files directly can fail or produce dirty diffs if line endings aren't converted to LF first and restored to CRLF afterward. Additionally, omitting explicit `<meta charset="UTF-8">` forces browsers to auto-detect/buffer initial HTML bytes before rendering.
+**Action:** Always normalize line endings to LF before applying git merge diffs on legacy static HTML files, restore CRLF upon completion, and ensure `<meta charset="UTF-8">` is declared at the top of `<head>`.
